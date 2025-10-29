@@ -1,0 +1,91 @@
+# ---------------------------------------
+# 🧩 Django / Python general
+# ---------------------------------------
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyo
+*.pyd
+*.so
+
+# ---------------------------------------
+# 🧰 Entornos virtuales
+# ---------------------------------------
+venv/
+.env
+.env.local
+.env.test
+.venv/
+Pipfile
+Pipfile.lock
+
+# ---------------------------------------
+# 🧪 Pytest / Coverage / Reports
+# ---------------------------------------
+.pytest_cache/
+.coverage
+coverage.xml
+htmlcov/
+reports/
+test_results/
+
+# ---------------------------------------
+# 🧱 Django files / Artefacts
+# ---------------------------------------
+db.sqlite3
+*.log
+*.pot
+*.mo
+media/
+staticfiles/
+static/
+tmp/
+*.bak
+*.swp
+*.swo
+
+# ---------------------------------------
+# 🧠 IDEs / Editores
+# ---------------------------------------
+.vscode/
+.idea/
+*.iml
+*.code-workspace
+
+# ---------------------------------------
+# 🪶 Migrations (opcional)
+# Comenta si quieres versionarlas
+# ---------------------------------------
+# */migrations/*
+# !*/migrations/__init__.py
+
+# ---------------------------------------
+# 🐘 PostgreSQL / Docker
+# ---------------------------------------
+*.sql
+*.dump
+*.backup
+docker-compose.override.yml
+*.pid
+
+# ---------------------------------------
+# 🔐 Secretos / Llaves
+# ---------------------------------------
+secrets.json
+*.pem
+*.key
+*.crt
+
+# ---------------------------------------
+# 🧩 Node / Frontend (si se mezcla con frontend local)
+# ---------------------------------------
+node_modules/
+dist/
+build/
+package-lock.json
+
+# ---------------------------------------
+# ⚙️ Otros
+# ---------------------------------------
+.DS_Store
+Thumbs.db

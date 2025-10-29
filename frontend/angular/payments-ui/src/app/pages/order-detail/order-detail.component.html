@@ -1,0 +1,57 @@
+<!-- src/app/pages/order-detail/order-detail.component.html -->
+<section class="order-detail-container">
+  @if (order(); as o) {
+  <mat-card class="order-detail-card">
+    <mat-card-title>
+      <mat-icon>description</mat-icon>
+      Detalle de la Orden
+    </mat-card-title>
+
+    <mat-card-content>
+      <p><strong>ID:</strong> {{ o.id }}</p>
+      <p><strong>Descripción:</strong> {{ o.description }}</p>
+      <p><strong>Monto:</strong> ${{ o.amount }}</p>
+
+      <p>
+        <strong>Estado:</strong>
+        <mat-chip-listbox>
+          <mat-chip
+            [color]="o.status === 'PAID' ? 'primary' : o.status === 'FAILED' ? 'warn' : 'accent'"
+            selected
+          >
+            {{ o.status }}
+          </mat-chip>
+        </mat-chip-listbox>
+      </p>
+
+      <p><strong>Creada el:</strong> {{ o.created_at | date : 'medium' }}</p>
+    </mat-card-content>
+
+    <mat-card-actions>
+      @if (o.status === 'PENDING') {
+      <button mat-raised-button color="primary" (click)="payOrder()" [disabled]="isPaying()">
+        @if (isPaying()) {
+        <mat-progress-spinner
+          diameter="20"
+          mode="indeterminate"
+          color="accent"
+        ></mat-progress-spinner>
+        } @else {
+        <ng-container>
+          <mat-icon>credit_card</mat-icon>
+          Pagar
+        </ng-container>
+        }
+      </button>
+      }
+      <a mat-stroked-button color="accent" routerLink="/orders">
+        <mat-icon>arrow_back</mat-icon> Volver
+      </a>
+    </mat-card-actions>
+  </mat-card>
+  } @else {
+  <div class="loading-container">
+    <mat-progress-spinner mode="indeterminate" diameter="60" color="primary"></mat-progress-spinner>
+  </div>
+  }
+</section>

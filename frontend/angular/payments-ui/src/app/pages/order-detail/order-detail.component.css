@@ -1,0 +1,98 @@
+/* src/app/pages/order-detail/order-detail.component.css */
+.order-detail-container {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 16px;
+}
+
+mat-card {
+  padding: 20px;
+}
+
+/* 🔹 Botones de acción */
+.actions {
+  margin-top: 20px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px;
+  gap: 10px;
+}
+
+mat-progress-spinner {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+button mat-progress-spinner {
+  margin: 0 auto;
+}
+
+/* 💬 Mejoras generales del card */
+mat-card-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+/* 💠 Estado (mat-chip) */
+p strong + mat-chip-listbox {
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 8px;
+}
+
+mat-chip {
+  font-weight: 600;
+  text-transform: uppercase;
+  min-width: 100px;
+  justify-content: center;
+  border-radius: 16px;
+  padding: 4px 10px;
+}
+
+/* 🎨 Colores personalizados de chips */
+mat-chip[color="primary"] {
+  background-color: #1976d2;
+  color: white;
+}
+mat-chip[color="warn"] {
+  background-color: #e53935;
+  color: white;
+}
+mat-chip[color="accent"] {
+  background-color: #fbc02d;
+  color: black;
+}
+
+/* 💡 Responsive refinado */
+@media (max-width: 600px) {
+  .order-detail-container {
+    padding: 8px;
+    margin: 20px auto;
+  }
+
+  mat-card {
+    padding: 16px;
+  }
+
+  mat-card-title {
+    font-size: 1rem;
+  }
+
+  mat-chip {
+    font-size: 0.8rem;
+  }
+
+  button {
+    flex: 1;
+  }
+}

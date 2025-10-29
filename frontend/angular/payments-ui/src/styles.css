@@ -1,0 +1,85 @@
+/* src/styles.css */
+
+/* ✅ Importa el tema Material (ya lo tienes) */
+@import '@angular/material/prebuilt-themes/indigo-pink.css';
+
+/* Base */
+html, body {
+  height: 100%;
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  background-color: #fafafa;
+  color: #212121;
+}
+
+/* Layout principal */
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* ✅ Toolbar adaptable */
+.main-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0 1rem;
+  background-color: var(--mat-toolbar-container-background-color, #3f51b5);
+  color: var(--mat-toolbar-container-text-color, white);
+  font-weight: 500;
+}
+
+.main-toolbar mat-icon {
+  font-size: 1.5rem;
+}
+
+/* ✅ Contenido adaptable */
+.main-content {
+  flex: 1;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ========================= */
+/* 📱 RESPONSIVE BREAKPOINTS */
+/* ========================= */
+
+/* Tablets */
+@media (max-width: 1024px) {
+  .main-content {
+    padding: 1.5rem;
+  }
+
+  .main-toolbar {
+    font-size: 0.95rem;
+  }
+}
+
+/* Celulares */
+@media (max-width: 600px) {
+  .main-content {
+    padding: 1rem;
+  }
+
+  .main-toolbar {
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.5rem 0.75rem;
+    font-size: 0.9rem;
+  }
+
+  .main-toolbar mat-icon {
+    font-size: 1.25rem;
+  }
+
+  table {
+    font-size: 0.85rem;
+  }
+
+  th, td {
+    padding: 0.25rem 0.5rem;
+  }
+}

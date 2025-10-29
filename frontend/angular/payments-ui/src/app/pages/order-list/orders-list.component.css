@@ -1,0 +1,78 @@
+/* src/app/pages/order-list/orders-list.component.css */
+.orders-list-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+h2 {
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+}
+
+.orders-table {
+  display: block;
+}
+
+.orders-cards {
+  display: none;
+}
+
+.status {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-weight: 500;
+}
+
+.status.pending {
+  color: #e67e22;
+}
+
+.status.paid {
+  color: #2ecc71;
+}
+
+mat-card {
+  margin-bottom: 1rem;
+}
+
+/* ✅ Resaltado de nuevas órdenes */
+tr.highlighted {
+  background-color: rgba(255, 215, 64, 0.15);
+  transition: background-color 0.3s ease;
+}
+
+.order-card.highlighted {
+  box-shadow: 0 0 0 2px rgba(255, 215, 64, 0.7);
+  transition: box-shadow 0.2s ease;
+}
+
+/* ===================================== */
+/* 📱 RESPONSIVE: mostrar cards en móvil */
+/* ===================================== */
+@media (max-width: 768px) {
+  .orders-table {
+    display: none;
+  }
+
+  .orders-cards {
+    display: flex;
+    flex-direction: column;
+  }
+
+  mat-card-title {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 1.05rem;
+  }
+
+  .status {
+    font-size: 0.9rem;
+  }
+
+  mat-card-content p {
+    margin: 0.25rem 0;
+  }
+}

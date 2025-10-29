@@ -1,0 +1,18 @@
+<!-- src/app/app.html -->
+<mat-toolbar color="primary" class="toolbar">
+  <span class="title">💳 Pagos - Órdenes</span>
+  <span class="spacer"></span>
+
+  <!-- 🔔 Campanita dinámica -->
+  <button
+    mat-icon-button
+    [matBadge]="notificationsCount()"
+    matBadgeColor="warn"
+    [matBadgeHidden]="notificationsCount() === 0"
+    (click)="markAllRead()"
+  >
+    <mat-icon [class.has-notif]="notificationsCount() > 0">notifications</mat-icon>
+  </button>
+</mat-toolbar>
+
+<router-outlet></router-outlet>

@@ -1,0 +1,128 @@
+# ======================================
+# 🧠 BASE IGNORE – Node + TypeScript
+# ======================================
+
+# Dependencias
+node_modules/
+
+# Compilados de TypeScript
+dist/
+build/
+*.tsbuildinfo
+
+# Archivos temporales o de debug
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Archivos de entorno
+.env
+.env.*.local
+.env.local
+.env.test
+.env.development
+.env.production
+
+# ======================================
+# 🧪 TESTING / COVERAGE
+# ======================================
+
+# Cobertura Jest
+coverage/
+# Reportes temporales
+.junit/
+*.lcov
+test-results.xml
+
+# Cachés de Jest / TS / Pytest-like
+.cache/
+.jest/
+.pnp.*
+__pycache__/
+__snapshots__/
+
+# ======================================
+# ⚙️ TOOLS / IDEs
+# ======================================
+
+# VS Code
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+
+# JetBrains (IntelliJ, WebStorm)
+.idea/
+
+# MacOS / Linux metadata
+.DS_Store
+Thumbs.db
+ehthumbs.db
+
+# ======================================
+# 🐳 DOCKER / KUBERNETES
+# ======================================
+
+# Archivos temporales de Docker
+docker-compose.override.yml
+docker-compose.dev.yml
+docker-compose.test.yml
+*.pid
+*.seed
+*.pid.lock
+
+# Logs de contenedores y Kafka
+kafka-logs/
+zookeeper-data/
+zookeeper-logs/
+tmp/
+logs/
+*.db
+*.sock
+
+# ======================================
+# 🪶 MongoDB / Mongoose
+# ======================================
+
+# Bases locales o backups
+*.bson
+*.json
+*.lock
+dump/
+data/
+mongo-data/
+mongodb-data/
+
+# ======================================
+# 🧩 VARIOS DEL PROYECTO
+# ======================================
+
+# Archivos generados por ts-node-dev o procesos temporales
+*.tsnode-dev.json
+*.tmp
+*.temp
+*.bak
+
+# Archivos del sistema
+*.swp
+*.swo
+*.orig
+
+# ======================================
+# 📦 PERSONALIZADO PARA PAYMENTS.MS
+# ======================================
+
+# Eventos Kafka persistidos en pruebas o DLQ simuladas
+order_created_dlq_*.json
+order_created_*.json
+
+# Configs locales que no deben subirse
+local.env
+local.settings.json
+private.*
+
+# ======================================
+# ✅ FIN DEL ARCHIVO
+# ======================================

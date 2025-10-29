@@ -1,0 +1,121 @@
+# ==============================================
+# 🧠 Java / Spring Boot
+# ==============================================
+
+# Compiled class files
+*.class
+*.jar
+*.war
+*.ear
+
+# Log files
+*.log
+
+# Spring Boot generated files
+spring.log
+
+# ==============================================
+# 🧱 Gradle
+# ==============================================
+
+.gradle/
+build/
+out/
+!gradle/wrapper/gradle-wrapper.jar
+!**/src/main/**/build/      # prevent accidental submodule ignores
+
+# Gradle caches
+.gradle-cache/
+.gradle-test-kit/
+
+# Local build reports
+reports/
+test-results/
+build/reports/
+build/test-results/
+
+# ==============================================
+# ⚙️ IDE / Editor
+# ==============================================
+
+# IntelliJ IDEA
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# VS Code
+.vscode/
+.history/
+*.code-workspace
+
+# Eclipse
+.project
+.classpath
+.settings/
+
+# NetBeans
+/nbproject/private/
+/build/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+
+# ==============================================
+# 🔒 OS / Miscellaneous
+# ==============================================
+
+# macOS
+.DS_Store
+
+# Linux
+*~
+
+# Windows
+Thumbs.db
+Desktop.ini
+
+# ==============================================
+# 🧪 Testing / Coverage
+# ==============================================
+
+# Test coverage reports
+coverage/
+.coverage/
+.jacoco/
+jacoco.exec
+build/jacoco/
+
+# ==============================================
+# 🧰 Docker / Container (si se usa)
+# ==============================================
+
+/docker-compose.override.yml
+*.pid
+*.seed
+*.pid.lock
+
+# ==============================================
+# 🧩 Environment / Secrets
+# ==============================================
+
+.env
+.env.local
+.env.test
+.env.*.local
+
+# ==============================================
+# 🔬 Misc
+# ==============================================
+
+# ModelMapper temporary cache
+modelmapper-cache/
+
+# Logs and temp files created during local Kafka tests
+/tmp/
+*.tmp
+
+# Kotlin/Java annotation processors
+*.kapt/
+*.apt_generated/

@@ -1,0 +1,45 @@
+services:
+  zookeeper:
+    image: confluentinc/cp-zookeeper:7.7.0
+    container_name: kafka_zookeeper
+    environment:
+      ZOOKEEPER_CLIENT_PORT: 2181
+      ZOOKEEPER_TICK_TIME: 2000
+    networks:
+      - broker-kafka
+
+  kafka:
+    image: confluentinc/cp-kafka:7.7.0
+    container_name: kafka_broker
+    depends_on:
+      - zookeeper
+    ports:
+      - "9092:9092"
+    environment:
+      KAFKA_BROKER_ID: 1
+      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://kafka:29092,PLAINTEXT_HOST://localhost:9092
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: PLAINTEXT:PLAINTEXT,PLAINTEXT_HOST:PLAINTEXT
+      KAFKA_INTER_BROKER_LISTENER_NAME: PLAINTEXT
+      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
+    # ⬇️ Espera a que Zookeeper esté listo (máx. 40s) y luego arranca Kafka
+    command: >
+      bash -c "cub zk-ready zookeeper:2181 40 && /etc/confluent/docker/run"
+    networks:
+      - broker-kafka
+
+  kafdrop:
+    image: obsidiandynamics/kafdrop:latest
+    container_name: kafdrop_ui
+    depends_on:
+      - kafka
+    ports:
+      - "19000:9000"
+    environment:
+      KAFKA_BROKERCONNECT: kafka:29092
+    networks:
+      - broker-kafka
+
+networks:
+  broker-kafka:
+    driver: bridge

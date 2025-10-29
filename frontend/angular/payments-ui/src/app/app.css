@@ -1,0 +1,13 @@
+mat-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.title {
+  font-weight: 600;
+}
+
+mat-icon.has-notif {
+  color: #ff5252; /* rojo si hay nuevas notificaciones */
+}
